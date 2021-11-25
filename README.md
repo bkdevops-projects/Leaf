@@ -18,14 +18,14 @@ Leaf 最早期需求是各个业务线的订单ID生成需求。有的业务直�
 
 ```shell script
 git clone git@github.com:ci-plugins/Leaf.git
-git checkout feature/spring-boot-starter
+git checkout master
 cd leaf
 mvn clean install -Dmaven.test.skip=true 
 ```
 #### 引入依赖
 ```xml
 <dependency>
-	<artifactId>leaf-boot-starter</artifactId>
+    <artifactId>leaf-boot-starter</artifactId>
     <groupId>com.tencent.devops.leaf</groupId>
     <version>1.0.1-RELEASE</version>
 </dependency>
@@ -65,8 +65,6 @@ public class T {
 }
 ```
 
-TIPS:后续会将jar包上传的maven仓库
-
 ### 使用注解启动leaf
 https://github.com/ci-plugins/Leaf/blob/master/README.md
 
@@ -96,7 +94,7 @@ Leaf Server的配置都在yml中
 #### 号段模式
 
 如果使用号段模式，需要建立DB表，并配置leaf.segment.url, leaf.segment.username, leaf.segment.password;
-如果dao层不用mybatis,那么用户需要在自已的工程中定义一个继承IDAllocDao接口的dao实现类，并且把leaf.segment.allocStrategyDaoBeanName
+如果dao层不用mybatis实现,那么用户需要在自已的工程中定义一个继承IDAllocDao接口的dao实现类，并且把leaf.segment.allocStrategyDaoBeanName
 该配置的值指定为dao实现类在spring中的bean名称。
 
 如果不想使用该模式配置leaf.segment.enable=false即可。
