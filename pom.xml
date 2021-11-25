@@ -5,7 +5,7 @@
     <groupId>com.tencent.devops.leaf</groupId>
     <artifactId>leaf-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0-RELEASE</version>
+    <version>1.0.1-RELEASE</version>
     <name>Leaf</name>
     <modules>
         <module>leaf-core</module>
@@ -54,7 +54,7 @@
             <dependency>
                 <groupId>com.tencent.devops.leaf</groupId>
                 <artifactId>leaf-core</artifactId>
-                <version>1.0.0-RELEASE</version>
+                <version>1.0.1-RELEASE</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba</groupId>
@@ -158,16 +158,16 @@
     </dependencyManagement>
 
     <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <name>Sonatype Nexus Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </snapshotRepository>
         <repository>
-            <id>ossrh</id>
-            <name>Nexus Release Repository</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>${releaseId}</id>
+            <name>${releaseName}</name>
+            <url>${releaseUrl}</url>
         </repository>
+        <snapshotRepository>
+            <id>${snapshotId}</id>
+            <name>${snapshotName}</name>
+            <url>${snapshotUrl}</url>
+        </snapshotRepository>
     </distributionManagement>
     <build>
         <finalName>leaf</finalName>
@@ -187,18 +187,6 @@
                 <version>2.4.2</version>
                 <configuration>
                     <skipTests>true</skipTests>
-                </configuration>
-            </plugin>
-            <!-- Nexus Staging Plugin -->
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.8</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>false</autoReleaseAfterClose>
                 </configuration>
             </plugin>
             <plugin>

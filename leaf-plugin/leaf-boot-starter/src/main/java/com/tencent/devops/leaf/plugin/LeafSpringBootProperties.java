@@ -2,13 +2,11 @@ package com.tencent.devops.leaf.plugin;
 
 import com.tencent.devops.leaf.common.PropertyFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 
 @Component
 @ConfigurationProperties(prefix = "leaf",ignoreUnknownFields = true)
-@PropertySource("classpath:leaf.properties")
 public class LeafSpringBootProperties {
     private String name;
     private Segment segment;

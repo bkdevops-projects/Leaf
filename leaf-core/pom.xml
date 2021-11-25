@@ -4,11 +4,11 @@
     <parent>
         <groupId>com.tencent.devops.leaf</groupId>
         <artifactId>leaf-parent</artifactId>
-        <version>1.0.0-RELEASE</version>
+        <version>1.0.1-RELEASE</version>
     </parent>
     <artifactId>leaf-core</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0-RELEASE</version>
+    <version>1.0.1-RELEASE</version>
     <name>leaf-core</name>
     <properties>
         <mysql-connector-java.version>5.1.38</mysql-connector-java.version>

@@ -27,20 +27,23 @@ mvn clean install -Dmaven.test.skip=true
 <dependency>
 	<artifactId>leaf-boot-starter</artifactId>
     <groupId>com.tencent.devops.leaf</groupId>
-    <version>1.0.0-RELEASE</version>
+    <version>1.0.1-RELEASE</version>
 </dependency>
 ```
-#### 配置leaf.properties到你的classpath下面
-```properties
-leaf.name=test
-leaf.segment.enable=false
-#leaf.segment.url=
-#leaf.segment.username=
-#leaf.segment.password=
-
-leaf.snowflake.enable=false
-#leaf.snowflake.address=
-#leaf.snowflake.port=
+#### 配置yml文件
+```yml
+leaf:
+  segment:
+    allocStrategyDaoBeanName: jooqIDAllocDaoImpl
+    enable: true
+    url: jdbc:mysql://gamedb.dev.devops.db:10000/devops_project?useSSL=false&autoReconnect=true&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+    username: ENC(4thI6E9FBq9rHHDuRXRIyA==)
+    password: ENC(muhwM7Fz7zJZF/OsJSlOoA==)
+  snowflake:
+    enable: false
+    address: 
+    port:
+  name: dev-leaf
 ```
 #### 利用注解启动leaf，并使用api
 ```java
@@ -76,7 +79,7 @@ https://github.com/ci-plugins/Leaf/blob/master/README.md
 
 Leaf 提供两种生成的ID的方式（号段模式和snowflake模式），你可以同时开启两种方式，也可以指定开启某种方式（默认两种方式为关闭状态）。
 
-Leaf Server的配置都在leaf-server/src/main/resources/leaf.properties中
+Leaf Server的配置都在yml中
 
 | 配置项                    | 含义                          | 默认值 |
 | ------------------------- | ----------------------------- | ------ |
@@ -116,7 +119,7 @@ insert into T_LEAF_ALLOC(BIZ_TAG, MAX_ID, STEP, DESCRIPTION) values('leaf-segmen
 
 ##### 配置相关数据项
 
-在leaf.properties中配置leaf.segment.url, leaf.segment.username, leaf.segment.password参数
+在yml中配置leaf.segment.url, leaf.segment.username, leaf.segment.password参数
 
 #### Snowflake模式
 
@@ -126,7 +129,7 @@ insert into T_LEAF_ALLOC(BIZ_TAG, MAX_ID, STEP, DESCRIPTION) values('leaf-segmen
 
 ##### 配置zookeeper地址
 
-在leaf.properties中配置leaf.snowflake.zk.address，配置leaf 服务监听的端口leaf.snowflake.port。
+在yml中配置leaf.snowflake.zk.address，配置leaf 服务监听的端口leaf.snowflake.port。
 #### 运行Leaf Server
 
 ##### 打包服务
