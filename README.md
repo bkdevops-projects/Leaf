@@ -36,9 +36,9 @@ leaf:
   segment:
     allocStrategyDaoBeanName: jooqIDAllocDaoImpl
     enable: true
-    url: jdbc:mysql://gamedb.dev.devops.db:10000/devops_project?useSSL=false&autoReconnect=true&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
-    username: ENC(4thI6E9FBq9rHHDuRXRIyA==)
-    password: ENC(muhwM7Fz7zJZF/OsJSlOoA==)
+    url: jdbc:mysql://xxxxxx/devops_project?useSSL=false&autoReconnect=true&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+    username: xxx
+    password: xxx
   snowflake:
     enable: false
     address: 
