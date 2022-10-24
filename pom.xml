@@ -5,7 +5,7 @@
     <groupId>com.tencent.devops.leaf</groupId>
     <artifactId>leaf-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.1-RELEASE</version>
+    <version>1.0.2-RELEASE</version>
     <name>Leaf</name>
     <modules>
         <module>leaf-core</module>
@@ -41,20 +41,20 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <junit.version>4.12</junit.version>
-        <leaf.spring.version>5.0.5.RELEASE</leaf.spring.version>
+        <junit.version>5.9.1</junit.version>
+        <leaf.spring.version>5.3.19</leaf.spring.version>
         <maven.compiler.version>3.5.1</maven.compiler.version>
-        <mybatis.version>3.3.0</mybatis.version>
+        <mybatis.version>3.5.11</mybatis.version>
         <perf4j.version>0.9.16</perf4j.version>
-        <curator.version>2.6.0</curator.version>
-        <slf4j.version>1.7.2</slf4j.version>
-        <druid.version>1.0.18</druid.version>
-        <jackson-databind.version>2.9.6</jackson-databind.version>
-        <mysql-connector-java.version>5.1.38</mysql-connector-java.version>
-        <commons-io.version>2.4</commons-io.version>
-        <log4j.version>2.7</log4j.version>
-        <mybatis-spring.version>1.2.5</mybatis-spring.version>
-        <spring-boot-dependencies.version>2.0.1.RELEASE</spring-boot-dependencies.version>
+        <curator.version>5.3.0</curator.version>
+        <slf4j.version>2.0.3</slf4j.version>
+        <druid.version>1.2.14</druid.version>
+        <mysql-connector-java.version>8.0.31</mysql-connector-java.version>
+        <commons-io.version>2.11.0</commons-io.version>
+        <log4j.version>2.19.0</log4j.version>
+        <mybatis-spring.version>2.0.7</mybatis-spring.version>
+        <spring-boot-dependencies.version>2.5.13</spring-boot-dependencies.version>
+        <logback.version>1.2.10</logback.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -68,7 +68,7 @@
             <dependency>
                 <groupId>com.tencent.devops.leaf</groupId>
                 <artifactId>leaf-core</artifactId>
-                <version>1.0.1-RELEASE</version>
+                <version>1.0.2-RELEASE</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba</groupId>
@@ -149,6 +149,16 @@
                 <version>${log4j.version}</version>
             </dependency>
             <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot</artifactId>
                 <version>2.0.3.RELEASE</version>
@@ -164,8 +174,8 @@
                 <version>${mybatis-spring.version}</version>
             </dependency>
             <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
                 <version>${junit.version}</version>
             </dependency>
         </dependencies>

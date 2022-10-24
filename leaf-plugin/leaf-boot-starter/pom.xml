@@ -5,7 +5,7 @@
     <parent>
         <artifactId>leaf-plugin</artifactId>
         <groupId>com.tencent.devops.leaf</groupId>
-        <version>1.0.1-RELEASE</version>
+        <version>1.0.2-RELEASE</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,7 +14,7 @@
         <dependency>
             <groupId>com.tencent.devops.leaf</groupId>
             <artifactId>leaf-core</artifactId>
-            <version>1.0.1-RELEASE</version>
+            <version>1.0.2-RELEASE</version>
         </dependency>
     </dependencies>
 </project>

@@ -27,7 +27,7 @@ mvn clean install -Dmaven.test.skip=true
 <dependency>
     <artifactId>leaf-boot-starter</artifactId>
     <groupId>com.tencent.devops.leaf</groupId>
-    <version>1.0.1-RELEASE</version>
+    <version>1.0.2-RELEASE</version>
 </dependency>
 ```
 #### 配置yml文件
